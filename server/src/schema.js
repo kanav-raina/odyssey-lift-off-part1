@@ -4,6 +4,7 @@ const typeDefs =gql`
 
 type Query{
     tracksForHome:[Track!]!
+    track(id:ID!):Track
 }
 
 type Track {
@@ -13,6 +14,15 @@ type Track {
     thumbnail:String
     length:Int
     modulesCount:Int
+    description:String
+    numberOfViews:Int
+    modules:[Module!]!
+}
+
+type Module{
+    id:ID!
+    title:String!
+    length:Int
 }
 
 type Author{
